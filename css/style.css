@@ -318,6 +318,29 @@ aside img {
 
 /* EDICION DEL FOOTER - REDES */
 
+
+footer{
+    display: inline;
+    padding: 1rem;
+}
+
+.color-foot{
+    padding: 1rem;
+    color: white;
+    text-align: center;
+}
+
+footer a{
+    padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+@media (min-width: 1200px){
+
 footer{
     background-color: #0d0b1d;
     display: grid;
@@ -341,15 +364,13 @@ footer a{
     padding: 0 0.5rem;
     font-weight: 500;
     font-size: 1.1rem;
-    transition: all (0.3s);
     text-decoration: none;
     color: inherit;
     list-style: none;
 }
 
-footer a:hover {
-    transform: scale(1.2);
+footer a:hover{
     color: #ffbc0e;
 }
-
+}
 

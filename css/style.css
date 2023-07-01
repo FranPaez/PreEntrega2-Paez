@@ -211,6 +211,7 @@ main{
     align-items: center;
 }
 
+
 .card{
     background-color: #1c1b29;
     border-radius: 1.25rem;
@@ -218,6 +219,11 @@ main{
     box-shadow: 0 0 1.8rem rgba(0,0,0,0.18);
     width: 5;
     height: auto;
+    transition: all (0.3s);
+}
+
+.card:hover{
+    transform: scale(1.05);
 }
 
 .conteiner-card{
@@ -285,22 +291,24 @@ main{
 
 /* EDICION DEL ASIDE DE LA PAGINA */
 
-
-
-/*TAMAÑO D IMAGEN - REDUCIDO POR AHORA PARA FACILITARME EL TRABAJO  */
-
-aside h3 img{
-    height: 175px;
-    width: 175px;
+aside {
+    display: flex;
+    gap: 2.8rem;
+    padding: 1rem;
+    justify-content: center;
 }
 
+aside img {
 
+    height: 150px;
+    width: 150px;
+}
 
 
 /* EDICION DEL FOOTER - REDES */
 
 footer{
-    background-color: #00488b;
+    background-color: #0d0b1d;
 }
 
 

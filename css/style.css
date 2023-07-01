@@ -18,6 +18,8 @@ ul{
     list-style: none;
 }
 
+
+
 /*text utilizado*/
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@0;1&display=swap');
@@ -152,10 +154,12 @@ nav {
 
 header .nav-links li{
     padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 header .nav-links li:hover{
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 header .nav-links li a:hover{
@@ -291,6 +295,13 @@ main{
 
 /* EDICION DEL ASIDE DE LA PAGINA */
 
+aside{
+    display: none;
+}
+
+
+@media (min-width: 1200px){
+
 aside {
     display: flex;
     gap: 2.8rem;
@@ -299,9 +310,9 @@ aside {
 }
 
 aside img {
-
     height: 150px;
     width: 150px;
+}
 }
 
 
@@ -309,24 +320,36 @@ aside img {
 
 footer{
     background-color: #0d0b1d;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
+.color-foot{
+    padding: 1rem;
+    color: #a0a0a0;
+    text-align: center;
+}
 
-footer .link-foot li a{
-    font-size: 700;
-    color: white;
+footer h3{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0.6rem 0 1rem 0;
+}
+
+footer a{
+    padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all (0.3s);
     text-decoration: none;
+    color: inherit;
+    list-style: none;
 }
 
-footer .link-foot li{
-    display: inline-block;
-    padding: 0 7px;
-}
-
-footer .link-foot li:hover{
-    transform: scale(1.1);
-}
-
-footer .link-foot li a:hover{
+footer a:hover {
+    transform: scale(1.2);
     color: #ffbc0e;
 }
+
+

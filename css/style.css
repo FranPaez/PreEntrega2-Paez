@@ -376,22 +376,6 @@ footer a:hover{
 
 /* EDICION DE LA SECCION COMPONENTES */
 
-.main__componentes{
-    display: flex;
-}
-
-.list__componentes{
-    display: flex;
-    height: 100%;
-    width: auto;
-    padding: 5rem;
-}
-
-.list__conteiner{
-    height: 125vh;
-}
-
-
 .comp__padre{
     color: white;
     font-size: 1.1rem;
@@ -404,18 +388,8 @@ footer a:hover{
 .comp__hijo{
     display: flex;
     padding: 0.3rem;
+    margin-top: -1rem;
 }
-
-
-/* DIVISION DE RES*/
-
-.cards-prod{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 40px;
-}
-
 
 .card-prod{
     flex-basis: calc(33.33% - 1rem); /* Ajusta el ancho proporcionalmente */
@@ -428,7 +402,6 @@ footer a:hover{
     height: 28.12rem;
     transition: all (0.3s);
 }
-
 
 .card-prod:hover{
     transform: scale(1.05);
@@ -469,9 +442,98 @@ footer a:hover{
     font-weight: 400;
 }
 
+.cat__list{
+    background-color: #1c1b29;
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    padding-inline-start: 40px;
+    margin: -77rem 40px 40px;
+}
 
+.cat__item{
+    border-bottom: solid 1px white;
+    padding: 0.4rem;
+}
+
+
+.cat__padre{
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cat__hijo a{
+    list-style: none;
+    margin: 0.5rem;
+    text-decoration: none;
+    color: #a0a0a0;
+    font: 1rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+.cat__hijo:hover{
+    transform: scale(1.1);
+}
+
+
+@media (min-width: 400px){
+
+.main__componentes{
+    display: flex;
+    justify-content: center;
+}
+
+.cat__list{
+    display: none;
+}
+
+.cards-prod{
+    flex-direction: column;
+    padding: 1rem;
+    flex-wrap: nowrap;
+}
+}
+
+@media (min-width: 768px) {
+.cards-prod {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    padding: 1.25rem;
+}
+}
+
+@media (min-width: 1200px){
+
+.main__componentes{
+    display: flex;
+    justify-content: stretch;
+}
+
+.cat__list{
+    background-color: #1c1b29;
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    padding-inline-start: 2.5rem;
+    margin: -83.5rem 2.5rem 2.5rem;
+    }
+
+.cards-prod {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Agregamos esta línea para crear tres columnas */
+    grid-gap: 1rem;
+    gap: 2rem;
+    padding: 1.25rem;
+    }
+    
+}
 
 /* DIVISION DE RES*/
-
 
 

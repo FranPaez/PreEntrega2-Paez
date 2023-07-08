@@ -591,7 +591,11 @@ footer a:hover{
 
 /* EDICION DE LA SECCION SOBRE NOSOTROS */
 
-.text__title__acsn{
+.main__sn{
+    padding: 1rem;
+}
+
+.textTittle__preg{
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.15rem;
@@ -639,4 +643,12 @@ footer a:hover{
     list-style: none;
     text-decoration: none;
     color: #a0a0a0;
+}
+
+.lista__list li:hover{
+    transform: scale(1.2);
+}
+
+.lista__list li a:hover{
+    color: #ffbc0e;
 }

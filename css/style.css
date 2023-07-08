@@ -374,7 +374,7 @@ footer a:hover{
 }
 }
 
-/* EDICION DE LA SECCION COMPONENTES */
+/* EDICION DE LA SECCION COMPONENTES - CARDS */
 
 .comp__padre{
     color: white;
@@ -442,6 +442,8 @@ footer a:hover{
     font-weight: 400;
 }
 
+/* EDICION DE LA SECCION COMPONENTES - LIST */
+
 .cat__list{
     background-color: #1c1b29;
     display: flex;
@@ -479,6 +481,7 @@ footer a:hover{
     transform: scale(1.1);
 }
 
+/* EDICION DE LA SECCION COMPONENTES - MEDIAQUERIES */
 
 @media (min-width: 400px){
 
@@ -534,6 +537,53 @@ footer a:hover{
     
 }
 
-/* DIVISION DE RES*/
+/* EDICION DE LA SECCION PERIFERICOS - LIST */
 
 
+@media (min-width: 400px){
+
+.cat__list__per{
+    display: none;
+}
+}
+
+@media (min-width: 1200px){
+
+.cat__list__per{
+    background-color: #1c1b29;
+    display: flex;
+    align-items: center;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    margin: -90.5rem 2.5rem 2.5rem;
+    }
+}
+
+.cat__item__per{
+    border-bottom: solid 1px white;
+    padding: 0.4rem;
+}
+
+.cat__padre__per{
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    
+}
+
+.cat__hijo__per a{
+    list-style: none;
+    text-align: center;
+    margin: 0.5rem;
+    text-decoration: none;
+    color: #a0a0a0;
+    font: 1rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+.cat__hijo__per:hover{
+    transform: scale(1.1);
+}

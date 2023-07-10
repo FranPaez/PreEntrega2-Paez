@@ -1,0 +1,61 @@
+.main__sn{
+    padding: 1rem;
+}
+
+.textTittle__preg{
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.15rem;
+    text-shadow: 0 2px 0.56rem #CCCCCC;
+    color: $c-textcard;
+    margin: 1.56rem 2.5rem 1.56rem;
+    font-size: 50px;
+}
+
+.preg__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $c-textcard;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color: $c-card;
+    box-shadow: 0 1px 0.5rem #CCCCCC;
+    width: 90vw;
+    text-align: center;
+    border-radius: 0.8rem;
+    border: solid 1px $c-textcard;
+    margin: 1rem;
+    padding: 0.3rem;
+}
+
+.rta__list{
+    color: $c-textdetails;
+    text-align: center;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.lista__list li{
+    max-width: 90vw;
+    text-align: center;
+    margin: 0 auto;
+    list-style: none;
+    color: $c-textdetails;
+
+:hover{
+    transform: scale(1.2);
+}
+
+a{
+    max-width: 90vw;
+    margin: 0 auto;
+    list-style: none;
+    text-decoration: none;
+    color: $c-textdetails;
+    }
+
+a:hover{
+color: $c-hover;
+}
+}

@@ -1,4 +1,3 @@
-/* FORMATEO DE DOCUMENTO */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,7 +20,6 @@ body {
   background-color: #151320;
 }
 
-/*EDICION DEL NAV*/
 header {
   display: flex;
   flex-direction: column;
@@ -147,7 +145,6 @@ header form {
   }
 }
 
-/* CARDS PARA PRODUCTOS / EDICION DEL MAIN DE LA PAGINA*/
 .main__index {
   display: grid;
   place-items: center center;
@@ -227,7 +224,6 @@ header form {
     height: 500px;
   }
 }
-/* EDICION DEL ASIDE DE LA PAGINA */
 aside {
   display: none;
 }
@@ -244,7 +240,6 @@ aside {
     width: 150px;
   }
 }
-/* EDICION DEL FOOTER - REDES */
 footer {
   display: inline;
   padding: 1rem;
@@ -294,7 +289,38 @@ footer a {
   text-align: center;
 }
 
-/* EDICION DE LA SECCION COMPONENTES - CARDS */
+.cat__item {
+  border-bottom: solid 1px white;
+  padding: 0.4rem;
+}
+
+.cat__padre {
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cat__hijo a {
+  list-style: none;
+  margin: 0.5rem;
+  text-decoration: none;
+  color: #a0a0a0;
+  font: 1rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+.cat__hijo:hover {
+  transform: scale(1.1);
+}
+
+.main__comp {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: nowrap;
+}
+
 .card__prod {
   flex-basis: calc(33.33% - 1rem);
   margin-bottom: 1rem;
@@ -343,34 +369,6 @@ footer a {
   font-weight: 400;
 }
 
-/* EDICION DE LA SECCION COMPONENTES - LIST */
-.cat__item {
-  border-bottom: solid 1px white;
-  padding: 0.4rem;
-}
-
-.cat__padre {
-  text-align: center;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.cat__hijo a {
-  list-style: none;
-  margin: 0.5rem;
-  text-decoration: none;
-  color: #a0a0a0;
-  font: 1rem;
-  line-height: 1.8rem;
-  font-weight: 400;
-}
-
-.cat__hijo:hover {
-  transform: scale(1.1);
-}
-
-/* EDICION DE LA SECCION COMPONENTES - MEDIAQUERIES */
 @media (min-width: 400px) {
   .main__comp {
     display: flex;
@@ -419,7 +417,6 @@ footer a {
     height: 100%;
   }
 }
-/* EDICION DE LA SECCION PERIFERICOS - LIST */
 .main__per {
   display: flex;
   justify-content: center;
@@ -467,7 +464,6 @@ footer a {
     transform: scale(1.1);
   }
 }
-/* EDICION DE LA SECCION SOBRE NOSOTROS */
 .main__sn {
   padding: 1rem;
 }
@@ -527,7 +523,6 @@ footer a {
   color: #ffbc0e;
 }
 
-/* EDICION DE LA SECCION AYUDA */
 .main__ayuda {
   padding: 1rem;
 }

@@ -1,0 +1,54 @@
+footer{
+    display: inline;
+    padding: 1rem;
+
+a{
+    padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+}
+
+.foot_cont{
+    padding: 1rem;
+    color: $c-textcard;
+    text-align: center;
+}
+
+@media (min-width: 1200px){
+
+footer{
+    background-color: $c-nav;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+h3{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0.6rem 0 1rem 0;
+}
+
+a{
+    padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+a:hover{
+    color: $c-hover;
+}
+}
+}
+
+.foot_cont{
+    padding: 1rem;
+    color: $c-textdetails;
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+
+$c-background: #151320;
+$c-nav: #0d0b1d;
+$c-textcard: white;
+$c-textdetails: #a0a0a0;
+$c-card: #1c1b29; 
+$c-hover: #ffbc0e;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+}
+
+h1{
+    display: none;
+}
+
+ul, li{
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+    
+}
+
+body{
+    background-color: $c-background;
+}

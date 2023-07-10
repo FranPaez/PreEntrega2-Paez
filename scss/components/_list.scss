@@ -1,0 +1,25 @@
+.cat__item{
+    border-bottom: solid 1px $c-textcard;
+    padding: 0.4rem;
+}
+
+.cat__padre{
+    text-align: center;
+    color: $c-textcard;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cat__hijo a{
+    list-style: none;
+    margin: 0.5rem;
+    text-decoration: none;
+    color: $c-textdetails;
+    font: 1rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+.cat__hijo:hover{
+    transform: scale(1.1);
+}

@@ -1,5 +1,7 @@
 /* FORMATEO DE DOCUMENTO */
 
+
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -23,7 +25,11 @@ body{
     background-color: #151320;
 }
 
+
+
 /*EDICION DEL NAV*/
+
+
 
 header{
     display: flex;
@@ -178,7 +184,10 @@ nav ul{
 }
 }
 
+
+
 /* CARDS PARA PRODUCTOS / EDICION DEL MAIN DE LA PAGINA*/
+
 
 
 .main__index{
@@ -269,7 +278,10 @@ p{
 }
 
 
+
 /* EDICION DEL ASIDE DE LA PAGINA */
+
+
 
 aside{
     display: none;
@@ -290,7 +302,11 @@ img{
 }
 }
 
+
+
 /* EDICION DEL FOOTER - REDES */
+
+
 
 footer{
     display: inline;
@@ -347,7 +363,11 @@ a:hover{
     text-align: center;
 }
 
+
+
 /* EDICION DE LA SECCION COMPONENTES - CARDS */
+
+
 
 .card__prod{
     flex-basis: calc(33.33% - 1rem);
@@ -400,7 +420,11 @@ p{
 }
 }
 
+
+
 /* EDICION DE LA SECCION COMPONENTES - LIST */
+
+
 
 .cat__item{
     border-bottom: solid 1px white;
@@ -429,7 +453,11 @@ p{
     transform: scale(1.1);
 }
 
+
+
 /* EDICION DE LA SECCION COMPONENTES - MEDIAQUERIES */
+
+
 
 @media (min-width: 400px){
 
@@ -487,6 +515,8 @@ p{
     height: 100%;
 }
 }
+
+
 
 /* EDICION DE LA SECCION PERIFERICOS - LIST */
 
@@ -546,7 +576,11 @@ p{
 }
 }
 
-    /* EDICION DE LA SECCION SOBRE NOSOTROS */
+
+
+/* EDICION DE LA SECCION SOBRE NOSOTROS */
+
+
 
 .main__sn{
     padding: 1rem;
@@ -610,7 +644,11 @@ color: #ffbc0e;
 }
 }
 
-    /* EDICION DE LA SECCION AYUDA */
+
+
+/* EDICION DE LA SECCION AYUDA */
+
+
 
 .main__ayuda{
     padding: 1rem;

@@ -160,7 +160,7 @@ header form {
   align-items: center;
 }
 
-.card__conteiner {
+.card__container {
   background-color: #1c1b29;
   border-radius: 1.25rem;
   overflow: hidden;
@@ -170,7 +170,7 @@ header form {
   transition: all 0.3s;
 }
 
-.card__conteiner:hover {
+.card__container:hover {
   transform: scale(1.05);
 }
 
@@ -234,7 +234,7 @@ header form {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
-  .card__conteiner {
+  .card__container {
     width: 300px;
     height: 500px;
   }
@@ -350,12 +350,12 @@ footer a {
   transform: scale(1.05);
 }
 
-.card__prodconteiner {
+.card__prodcontainer {
   height: 0;
   padding-bottom: 100%;
   position: relative;
 }
-.card__prodconteiner img {
+.card__prodcontainer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -530,6 +530,7 @@ footer a {
   border: solid 1px white;
   margin: 1rem;
   padding: 0.3rem;
+  cursor: pointer;
 }
 
 .rta__list {

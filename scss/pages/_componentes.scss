@@ -11,8 +11,6 @@
     border-radius: 1.25rem;
     overflow: hidden;
     box-shadow: 0 0 1.8rem rgba(0,0,0,0.18);
-    width: 12.5rem;
-    height: 28.12rem;
     transition: all (0.3s);
 }
 
@@ -42,6 +40,7 @@
     
     h3{
         color: $c-textcard;
+        text-align: center;
         font-weight: 600;
         font-size: 1.1rem;
         margin: 0.6rem 0 1rem 0;
@@ -49,10 +48,36 @@
     
     p{
         color: $c-textdetails;
+        text-align: center;
         font: 1rem;
         line-height: 1.8rem;
         font-weight: 400;
     }
+
+    
+.card__price{
+    color: $c-price;
+    text-align: center;
+}
+
+.card__pay{
+    color: $c-textdetails;
+    font: 1rem;
+    text-align: center;
+    line-height: 1.8rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.card__btn{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-color: $c-btn;
+    color: $c-textcard;
+    padding: 0.3rem 20% 0.5rem;
+    border-radius: 1rem;
+}
     }
 
 @media (min-width: 400px){
@@ -106,6 +131,7 @@
         text-align: center;
         padding: 1.1rem;
         margin: 1.1rem;
+        margin-left: 5.2rem;
         border-radius: 1rem;
         padding-inline-start: 40px;
         height: 100%;

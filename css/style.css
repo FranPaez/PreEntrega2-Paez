@@ -6,8 +6,8 @@
   font-size: 20px;
 }
 
-h1 {
-  display: none;
+.oculto {
+  font-size: 0;
 }
 
 ul, li {
@@ -191,19 +191,34 @@ header form {
 }
 
 .card__details {
+  text-align: center;
   padding: 1.25rem 0.6rem;
 }
 .card__details h3 {
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
+  text-align: center;
   margin: 0.6rem 0 1rem 0;
 }
-.card__details p {
+.card__details .card__price {
+  color: #22E100;
+}
+.card__details .card__pay {
   color: #a0a0a0;
   font: 1rem;
+  text-align: center;
   line-height: 1.8rem;
   font-weight: 400;
+  padding-bottom: 0.3rem;
+}
+.card__details .card__btn {
+  margin-top: auto;
+  text-decoration: none;
+  background-color: #EB00FF;
+  color: white;
+  padding: 0.3rem 20% 0.5rem;
+  border-radius: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -328,8 +343,6 @@ footer a {
   border-radius: 1.25rem;
   overflow: hidden;
   box-shadow: 0 0 1.8rem rgba(0, 0, 0, 0.18);
-  width: 12.5rem;
-  height: 28.12rem;
   transition: all 0.3s;
 }
 
@@ -358,15 +371,38 @@ footer a {
 }
 .card__proddetails h3 {
   color: white;
+  text-align: center;
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0.6rem 0 1rem 0;
 }
 .card__proddetails p {
   color: #a0a0a0;
+  text-align: center;
   font: 1rem;
   line-height: 1.8rem;
   font-weight: 400;
+}
+.card__proddetails .card__price {
+  color: #22E100;
+  text-align: center;
+}
+.card__proddetails .card__pay {
+  color: #a0a0a0;
+  font: 1rem;
+  text-align: center;
+  line-height: 1.8rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+.card__proddetails .card__btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #EB00FF;
+  color: white;
+  padding: 0.3rem 20% 0.5rem;
+  border-radius: 1rem;
 }
 
 @media (min-width: 400px) {
@@ -412,6 +448,7 @@ footer a {
     text-align: center;
     padding: 1.1rem;
     margin: 1.1rem;
+    margin-left: 5.2rem;
     border-radius: 1rem;
     padding-inline-start: 40px;
     height: 100%;
@@ -436,7 +473,7 @@ footer a {
     text-align: center;
     border-radius: 1rem;
     padding-inline-start: 40px;
-    margin: 1.1rem;
+    margin: 1.1rem 1rem 0 5rem;
     height: 100%;
     width: 12.5rem;
   }

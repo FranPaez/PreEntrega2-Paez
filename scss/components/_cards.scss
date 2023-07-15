@@ -39,20 +39,37 @@ img{
 }
 
 .card__details{
+    text-align: center;
     padding: 1.25rem 0.6rem;
 
 h3{
     color: $c-textcard;
     font-weight: 600;
     font-size: 1.1rem;
+    text-align: center;
     margin: 0.6rem 0 1rem 0;
 }
 
-p{
+.card__price{
+    color: $c-price;
+}
+
+.card__pay{
     color: $c-textdetails;
     font: 1rem;
+    text-align: center;
     line-height: 1.8rem;
     font-weight: 400;
+    padding-bottom: 0.3rem;
+}
+
+.card__btn{
+    margin-top: auto;
+    text-decoration: none;
+    background-color: $c-btn;
+    color: $c-textcard;
+    padding: 0.3rem 20% 0.5rem;
+    border-radius: 1rem;
 }
 }
 
@@ -66,7 +83,7 @@ p{
 }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px){
 
 .cards{
     display: grid;

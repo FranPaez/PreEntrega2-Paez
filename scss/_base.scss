@@ -5,6 +5,8 @@ $c-textcard: white;
 $c-textdetails: #a0a0a0;
 $c-card: #1c1b29; 
 $c-hover: #ffbc0e;
+$c-price: #22E100;
+$c-btn: #EB00FF;
 
 *{
     box-sizing: border-box;
@@ -14,9 +16,10 @@ $c-hover: #ffbc0e;
     font-size: 20px;
 }
 
-h1{
-    display: none;
+.oculto{
+    font-size: 0;
 }
+
 
 ul, li{
     text-decoration: none;

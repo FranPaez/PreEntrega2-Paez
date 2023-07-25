@@ -57,7 +57,7 @@ header .nav__car {
 header form {
   display: none;
 }
-@media (min-width: 400px) {
+@media (min-width: 350px) {
   header nav {
     display: flex;
     justify-content: center;
@@ -431,7 +431,7 @@ footer a {
   border-radius: 1rem;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 350px) {
   .main__comp {
     display: flex;
     justify-content: center;

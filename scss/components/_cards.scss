@@ -73,7 +73,7 @@ h3{
 }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $bp-tablet) {
 
     .cards{
     grid-template-columns: repeat(2, 1fr);
@@ -83,7 +83,7 @@ h3{
 }
 }
 
-@media (min-width: 1200px){
+@media (min-width: $bp-desktop){
 
 .cards{
     display: grid;

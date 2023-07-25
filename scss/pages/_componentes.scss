@@ -80,7 +80,7 @@
 }
     }
 
-@media (min-width: 400px){
+@media (min-width: $bp-smartphone){
 
     .main__comp{
         display: flex;
@@ -98,7 +98,7 @@
         display: none;
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: $bp-tablet) {
     
     .cards__comp{
         display: grid;
@@ -108,7 +108,7 @@
     }
     }
     
-        @media (min-width: 1200px){
+        @media (min-width: $bp-desktop){
     
     .main__comp{
         display: flex;

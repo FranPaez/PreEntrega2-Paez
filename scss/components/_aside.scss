@@ -13,6 +13,12 @@ aside{
 img{
     height: 150px;
     width: 150px;
+    transition: all (0.4s);
+}
+
+& img:hover{
+    transform: scale(1.2);
+    filter: drop-shadow(1px 3px 3px white);
 }
 }
 }

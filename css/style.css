@@ -114,11 +114,10 @@ header form {
     justify-content: space-between;
   }
   header .nav__car {
-    display: flex;
+    display: inline-block;
     height: 1.5rem;
     margin-right: 1rem;
     margin-top: 1rem;
-    order: 3;
   }
 }
 @media (min-width: 1200px) {
@@ -294,6 +293,11 @@ aside {
   aside img {
     height: 150px;
     width: 150px;
+    transition: all 0.4s;
+  }
+  aside img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(1px 3px 3px white);
   }
 }
 footer {

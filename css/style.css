@@ -70,6 +70,7 @@ header form {
     width: 8rem;
     justify-content: center;
     background-color: #1c1b29;
+    box-shadow: 0 1px 3px #CCCCCC;
   }
   header .nav__links {
     display: flex;
@@ -84,6 +85,7 @@ header form {
     width: 6rem;
     justify-content: center;
     background-color: #1c1b29;
+    box-shadow: 0 1px 0.5rem #CCCCCC;
   }
   header .nav__logo {
     margin-right: 1rem;
@@ -91,7 +93,16 @@ header form {
   header .nav__srchbar {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+  }
+  header .nav__srchbar__elements {
+    border-radius: 0.4rem;
+    box-shadow: 0 1px 0.5rem #CCCCCC;
+    border: 1px white;
+    padding: 0.3rem;
+    margin: 0.2rem;
+    background-color: #1c1b29;
+    color: #a0a0a0;
   }
   header .nav__links {
     display: flex;
@@ -133,7 +144,11 @@ header form {
   header .nav__car {
     display: flex;
     align-items: center;
-    height: 1.5rem;
+    margin-right: 3rem;
+    margin-top: 1.5rem;
+  }
+  header .nav__car img {
+    width: 100px;
   }
   header .nav__links li {
     padding: 0 0.5rem;

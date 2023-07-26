@@ -57,6 +57,7 @@ form{
         width: 8rem;
         justify-content: center;
         background-color: $c-card;
+        box-shadow: 0 1px 3px #CCCCCC;
     }
 }
 
@@ -76,6 +77,7 @@ form{
         width: 6rem;
         justify-content: center;
         background-color: $c-card;
+        box-shadow: 0 1px 0.5rem #CCCCCC;
     }
 
 .nav__logo{
@@ -85,7 +87,17 @@ form{
 .nav__srchbar{
     display: flex;
     align-items: center;
-    gap: 0.5rem
+    gap: 1rem;
+}
+
+.nav__srchbar__elements{
+    border-radius: 0.4rem;
+    box-shadow: 0 1px 0.5rem #CCCCCC;
+    border: 1px white;
+    padding: 0.3rem;
+    margin: 0.2rem;
+    background-color: $c-card;
+    color: $c-textdetails;
 }
 
 .nav__links{
@@ -137,7 +149,12 @@ nav ul{
 .nav__car{
     display: flex;
     align-items: center;
-    height: 1.5rem;
+    margin-right: 3rem;
+    margin-top: 1.5rem;
+}
+
+.nav__car img{
+    width: 100px;
 }
 
 .nav__links li{

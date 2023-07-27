@@ -5,7 +5,6 @@ header{
 
 nav{
     display: flex;
-    justify-content: center;
     align-items: center;
     padding-bottom: 1rem;
 }
@@ -46,7 +45,6 @@ form{
 @media (min-width: $bp-smartphone){
 
     nav{
-        display: flex;
         justify-content: center;
         margin-left: 1.5rem;
         gap: 2rem;
@@ -58,6 +56,9 @@ form{
         justify-content: center;
         background-color: $c-card;
         box-shadow: 0 1px 3px #CCCCCC;
+        font-family: 'Handjet', cursive;
+        font-family: 'PT Serif', serif;
+        font-family: 'Tektur', cursive;
     }
 }
 
@@ -75,6 +76,7 @@ form{
         border: 3px solid transparent;
         border-radius: 0.8rem;
         width: 6rem;
+        font-size: 0.7rem;
         justify-content: center;
         background-color: $c-card;
         box-shadow: 0 1px 0.5rem #CCCCCC;
@@ -93,6 +95,9 @@ form{
 .nav__srchbar__elements{
     border-radius: 0.4rem;
     box-shadow: 0 1px 0.5rem #CCCCCC;
+    font-family: 'Handjet', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Tektur', cursive;
     border: 1px white;
     padding: 0.3rem;
     margin: 0.2rem;
@@ -102,6 +107,7 @@ form{
 
 .nav__links{
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     gap: 1rem;
@@ -143,6 +149,14 @@ nav ul{
     flex-direction: row;
     align-items: center;
     gap: 2rem;
+}
+
+nav a{
+    font-family: 'Handjet', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Tektur', cursive;
+    font-size: 0.9rem;
+    width: 8rem;
 }
 
 .nav__car{

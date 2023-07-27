@@ -27,7 +27,6 @@ header {
 }
 header nav {
   display: flex;
-  justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
 }
@@ -59,7 +58,6 @@ header form {
 }
 @media (min-width: 350px) {
   header nav {
-    display: flex;
     justify-content: center;
     margin-left: 1.5rem;
     gap: 2rem;
@@ -71,6 +69,9 @@ header form {
     justify-content: center;
     background-color: #1D1539;
     box-shadow: 0 1px 3px #CCCCCC;
+    font-family: "Handjet", cursive;
+    font-family: "PT Serif", serif;
+    font-family: "Tektur", cursive;
   }
   header .nav__links {
     display: flex;
@@ -83,6 +84,7 @@ header form {
     border: 3px solid transparent;
     border-radius: 0.8rem;
     width: 6rem;
+    font-size: 0.7rem;
     justify-content: center;
     background-color: #1D1539;
     box-shadow: 0 1px 0.5rem #CCCCCC;
@@ -98,6 +100,9 @@ header form {
   header .nav__srchbar__elements {
     border-radius: 0.4rem;
     box-shadow: 0 1px 0.5rem #CCCCCC;
+    font-family: "Handjet", cursive;
+    font-family: "PT Serif", serif;
+    font-family: "Tektur", cursive;
     border: 1px white;
     padding: 0.3rem;
     margin: 0.2rem;
@@ -106,6 +111,7 @@ header form {
   }
   header .nav__links {
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     gap: 1rem;
@@ -139,6 +145,13 @@ header form {
     flex-direction: row;
     align-items: center;
     gap: 2rem;
+  }
+  header nav a {
+    font-family: "Handjet", cursive;
+    font-family: "PT Serif", serif;
+    font-family: "Tektur", cursive;
+    font-size: 0.9rem;
+    width: 8rem;
   }
   header .nav__car {
     display: flex;
@@ -360,6 +373,9 @@ footer a {
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
+  font-family: "Handjet", cursive;
+  font-family: "PT Serif", serif;
+  font-family: "Tektur", cursive;
 }
 
 .cat__hijo a {
@@ -370,6 +386,9 @@ footer a {
   font: 1rem;
   line-height: 1.8rem;
   font-weight: 400;
+  font-family: "Handjet", cursive;
+  font-family: "PT Serif", serif;
+  font-family: "Tektur", cursive;
 }
 
 .cat__hijo:hover {
@@ -535,6 +554,9 @@ footer a {
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
+    font-family: "Handjet", cursive;
+    font-family: "PT Serif", serif;
+    font-family: "Tektur", cursive;
   }
   .cat__hijo__per a {
     list-style: none;
@@ -545,6 +567,9 @@ footer a {
     font: 1rem;
     line-height: 1.8rem;
     font-weight: 400;
+    font-family: "Handjet", cursive;
+    font-family: "PT Serif", serif;
+    font-family: "Tektur", cursive;
   }
   .cat__hijo__per:hover {
     transform: scale(1.1);
@@ -562,6 +587,9 @@ footer a {
   color: white;
   margin: 1.56rem 2.5rem 1.56rem;
   font-size: 50px;
+  font-family: "Handjet", cursive;
+  font-family: "PT Serif", serif;
+  font-family: "Tektur", cursive;
 }
 
 .preg__list {
@@ -580,10 +608,13 @@ footer a {
   margin: 1rem auto 1rem auto;
   padding: 0.3rem;
   cursor: pointer;
+  font-family: "Handjet", cursive;
+  font-family: "PT Serif", serif;
+  font-family: "Tektur", cursive;
 }
 
 .rta__list {
-  color: #a0a0a0;
+  color: white;
   text-align: center;
   max-width: 90vw;
   margin: 0 auto;
@@ -594,7 +625,7 @@ footer a {
   text-align: center;
   margin: 0 auto;
   list-style: none;
-  color: #a0a0a0;
+  color: white;
 }
 .lista__list li :hover {
   transform: scale(1.2);

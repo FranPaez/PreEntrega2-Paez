@@ -16,6 +16,7 @@
 
 .card__prod:hover{
     transform: scale(1.05);
+    box-shadow: 0 1px 0.5rem $c-price;
 }
     
     .card__prodcontainer{
@@ -126,6 +127,7 @@
     
     .cat__list{
         background-color: $c-card;
+        box-shadow: 0 1px 0.5rem $c-price;
         display: flex;
         flex-direction: column;
         text-align: center;

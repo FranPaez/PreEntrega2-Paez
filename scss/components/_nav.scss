@@ -174,10 +174,11 @@ nav a{
     padding: 0 0.5rem;
     font-weight: 500;
     font-size: 1.1rem;
+    transition: all (0.2s);
 }
 
 .nav__links li:hover{
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 .nav__links li a:hover{

@@ -31,7 +31,7 @@ const prodCompoPage = [
         img: "../images/componentes/mother.png", alt: "Motherboard MSI Pro B660m"},
     { id: 2, name: "Motherboard Asus Tuf B450m", price: "73.000", 
         img: "../images/componentes/mother-ryzen.png", alt: "Motherboard Asus Tuf B450m"},
-    { id: 3, name: "Intel Core i7 12700K", price: "337.400", 
+    { id: 3, name: "Intel Core i7 12700K 12th gen", price: "337.400", 
         img: "../images/componentes/i7.png", alt: "intel core i7 12700K 5.00GHz"},
     { id: 4, name: "Ryzen 7 5800x 4.7GHz", price: "252.600", 
         img: "../images/componentes/ryzen.png", alt: "Ryzen 7 5800x 4.7GHz"},
@@ -49,7 +49,7 @@ const prodCompoPage = [
         img: "../images/componentes/cooler.png", alt: "procesador ryzen 7 de quinta generacion"},
     { id: 10, name: "Disco SSD Kingston 540GB", price: "12.000", 
         img: "../images/componentes/ssd.png", alt: "Disco Sólido SSD Kingston 540GB A400 500MB/s"},
-    { id: 11, name: "Gabinete Deepcool Black", price: "47.000", 
+    { id: 11, name: "Gabinete Deepcool Color Black", price: "47.000", 
         img: "../images/componentes/gabinete.png", alt: "Gabinete Deepcool MACUBE310P Black"},
 ]
 
@@ -73,7 +73,7 @@ const prodPerPage = [
     img:"../images/perifericos/auricular-razer.png", alt:"Auriculares Razer Kraken V2"},
     {id: 9, name:"Mousepad HX Fury", price: "40.200",
     img:"../images/perifericos/mousepad-hyperx.png", alt:"Mousepad hyperx Fury XXL"},
-    {id: 10, name:"Mousepad Steelseries QCK", price: "35.800",
+    {id: 10, name:"Mousepad SteelSerie QCK", price: "35.800",
     img:"../images/perifericos/mousepad-steelseries.png", alt:"Mousepad Steelseries QC1 XXL"},
     {id: 11, name:"Microfono HX Quadcast", price: "90.800",
     img:"../images/perifericos/mic-hyperx.png", alt:"Microfono Hyperx Quadcast",},

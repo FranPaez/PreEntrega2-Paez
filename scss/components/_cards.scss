@@ -72,6 +72,11 @@ h3{
     padding: 0.3rem 20% 0.5rem;
     border-radius: 1rem;
 }
+
+.card__btn:hover{
+    background-color: #004AF5;
+}
+
 }
 
 @media (min-width: $bp-tablet) {

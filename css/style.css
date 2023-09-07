@@ -652,7 +652,7 @@ footer a {
   padding: 1rem;
 }
 
-.h2-car {
+.h2__car {
   font-weight: 500;
   text-align: center;
   letter-spacing: 0.15rem;
@@ -663,6 +663,31 @@ footer a {
   font-family: "Handjet", cursive;
   font-family: "PT Serif", serif;
   font-family: "Tektur", cursive;
+}
+
+.no__elements {
+  padding: 1rem;
+  color: #a0a0a0;
+  text-align: center;
+}
+
+.btn__pay {
+  display: block;
+  width: 10rem;
+  text-align: center;
+  margin: 1rem auto;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  background-color: #EB00FF;
+  color: white;
+  padding: 0.5rem 5px;
+  border-radius: 1rem;
+  transition: 0.2s;
+}
+
+.btn__pay:hover {
+  transform: scale(1.1);
+  background-color: #004AF5;
 }
 
 /*# sourceMappingURL=style.css.map */

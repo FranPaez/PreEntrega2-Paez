@@ -393,6 +393,7 @@ footer a {
   font-family: "Handjet", cursive;
   font-family: "PT Serif", serif;
   font-family: "Tektur", cursive;
+  cursor: pointer;
 }
 
 .cat__hijo:hover {
@@ -551,6 +552,7 @@ footer a {
     margin: 1.1rem 1rem 0 5rem;
     height: 100%;
     width: 12.5rem;
+    cursor: pointer;
   }
   .cat__item__per {
     border-bottom: solid 1px white;

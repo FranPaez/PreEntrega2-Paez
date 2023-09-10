@@ -17,3 +17,15 @@ for (const itemsCompo of prodCompoPage){
         </div>
     `
 }
+
+let asideComp = document.getElementById(`sponsorsOutMain`);
+
+for (const picSponsors of asideOutMain){
+    asideComp.innerHTML += `
+        <div>
+            <h3>
+                <img src="${picSponsors.img}" alt="${picSponsors.alt}">
+            </h3>
+        </div>
+    `
+}

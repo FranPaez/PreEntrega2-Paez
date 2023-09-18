@@ -117,12 +117,20 @@
     
         @media (min-width: $bp-desktop){
     
+
+
     .main__comp{
         display: flex;
         justify-content: stretch;
         flex-wrap: nowrap;
     }
     
+    .cards_containar__comp{
+            width: 14.3rem;
+            height: 27.5rem;
+        }
+    
+
     .cards__comp{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -139,10 +147,10 @@
         text-align: center;
         padding: 1.1rem;
         margin: 1.1rem;
-        margin-left: 5.2rem;
+        margin-left: 4rem;
         border-radius: 1rem;
         padding-inline-start: 40px;
         height: 100%;
-        width: 19rem;
+        width: 20rem;
     }
     }

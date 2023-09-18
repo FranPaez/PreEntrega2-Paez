@@ -57,44 +57,44 @@
 
         <li class="cat__item">
             <span class="cat__padre">Productos</span>
-                <ul>
-                    <li class="cat__hijo"> <a  value="intel">Ver todos</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Mayor a menor precio</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Menor a mayor precio</a> </li>
+                <ul class="priceC__list">
+                    <li class="cat__hijo" data-category="all"> <a>Ver todos</a> </li>
+                    <li class="cat__hijo" data-category="lower_price"> <a>Mayor a menor precio</a> </li>
+                    <li class="cat__hijo" data-category="higher_price"> <a>Menor a mayor precio</a> </li>
                 </ul>
         </li>
 
         <li class="cat__item">
             <span class="cat__padre">Componentes</span>
-                <ul>
-                    <li class="cat__hijo"> <a  value="intel">Procesadores</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Motherboards</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Placas de video</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Memorias RAM</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Discos duros</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Refrigeracion</a> </li>
-                    <li class="cat__hijo"> <a  value="intel">Gabinetes</a> </li>
+                <ul id="categoryC__list">
+                    <li class="cat__hijo" data-category="procesador"> <a>Procesadores</a> </li>
+                    <li class="cat__hijo" data-category="motherboard"> <a>Motherboards</a> </li>
+                    <li class="cat__hijo" data-category="videocard"> <a>Placas de video</a> </li>
+                    <li class="cat__hijo" data-category="ram"> <a>Memorias RAM</a> </li>
+                    <li class="cat__hijo" data-category="disco"> <a>Discos duros</a> </li>
+                    <li class="cat__hijo" data-category="refrigeracion"> <a>Refrigeracion</a> </li>
+                    <li class="cat__hijo" data-category="gabinete"> <a>Gabinetes</a> </li>
                 </ul>
         </li>
 
         <li class="cat__item">
             <span class="cat__padre">Marcas</span>
-                <ul>
-                    <li class="cat__hijo"> <a  value="intel">Intel</a> </li>
-                    <li class="cat__hijo"> <a  value="amd">AMD</a> </li>
-                    <li class="cat__hijo"> <a value="msi">MSI</a> </li>
-                    <li class="cat__hijo"> <a value="asus">ASUS</a> </li>
-                    <li class="cat__hijo"> <a  value="hyperx">Hyperx</a> </li>
-                    <li class="cat__hijo"> <a  value="corsair">Corsair</a> </li>
-                    <li class="cat__hijo"> <a  value="ssd">Cool Master</a> </li>
-                    <li class="cat__hijo"> <a  value="ssd">Deepcool</a> </li>
+                <ul id="brandC__list">
+                    <li class="cat__hijo" data-category="intel"> <a>Intel</a> </li>
+                    <li class="cat__hijo" data-category="amd"> <a>AMD</a> </li>
+                    <li class="cat__hijo" data-category="msi"> <a>MSI</a> </li>
+                    <li class="cat__hijo" data-category="asus"> <a>ASUS</a> </li>
+                    <li class="cat__hijo" data-category="hyperx"> <a>Hyperx</a> </li>
+                    <li class="cat__hijo" data-category="corsair"> <a>Corsair</a> </li>
+                    <li class="cat__hijo" data-category="coolmaster"> <a>Cool Master</a> </li>
+                    <li class="cat__hijo" data-category="deepcool"> <a>Deepcool</a> </li>
                 </ul>
         </li>
     </ul>
 
-
-    <div class="cards__comp" id="cardsCompo"></div>
-
+    <div class="cards__container__comp">
+        <div class="cards__comp" id="cardsCompo"></div>
+    </div>
 </main>
 
 <aside id="sponsorsOutMain"> </aside>

@@ -4,7 +4,7 @@ for (const itemsMain of prodMainPage){
     prodMain.innerHTML += `
         <div class="card__container">
             <div class="card__body">
-                <a href="index.html">
+                <a>
                     <img src="${itemsMain.img}" alt="${itemsMain.alt}">
                 </a>
             </div>
@@ -12,7 +12,12 @@ for (const itemsMain of prodMainPage){
                 <h3> ${itemsMain.name} </h3>
                     <p class="card__price">$${itemsMain.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interes</p>
-                    <a href="#" class="card__btn">Comprar</a>
+                <div class="card__info__container">
+                    <a class="card__info" id="showPopup">Ver más info</a>
+                </div>
+                <div class="card__btn__container">
+                    <a class="card__btn">Comprar</a>
+                </div>
             </div>
         </div>
     `
@@ -29,3 +34,9 @@ for (const picSponsors of asideMain){
         </div>
     `
 }
+
+const showPopupButton = document.getElementById("showPopup");
+
+showPopupButton.addEventListener("click", function() {
+    popup.style.display = "block";
+});

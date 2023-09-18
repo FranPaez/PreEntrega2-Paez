@@ -23,6 +23,7 @@
         height: 0;
         padding-bottom:100%;
         position: relative;
+        
     
     img{
         width: 100%;
@@ -78,6 +79,7 @@
     color: $c-textcard;
     padding: 0.3rem 20% 0.5rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .card__btn:hover{
@@ -141,5 +143,6 @@
         border-radius: 1rem;
         padding-inline-start: 40px;
         height: 100%;
+        width: 19rem;
     }
     }

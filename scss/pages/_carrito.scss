@@ -1,0 +1,92 @@
+.h2__car{
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.15rem;
+        text-shadow: 0 2px 0.56rem #CCCCCC;
+        color: $c-textcard;
+        margin: 1.56rem 2.5rem 1.56rem;
+        font-size: 50px;
+        font-family: 'Handjet', cursive;
+        font-family: 'PT Serif', serif;
+        font-family: 'Tektur', cursive;
+    }
+
+
+.no__elements{
+    padding: 1rem;
+    color: $c-textdetails;
+    text-align: center;
+}
+
+.btn__pay{
+        display: block;
+        width: 10rem;
+        text-align: center;
+        margin: 1rem auto;
+        margin-bottom: 2rem;
+        text-decoration: none;
+        background-color: $c-btn;
+        color: $c-textcard;
+        padding: 0.5rem 5px;
+        border-radius: 1rem;
+        transition: (0.2s);
+    }
+
+    .btn__pay:hover{
+        transform: scale(1.1);
+        background-color: #004AF5;
+    }
+
+
+.car__container{
+    background-color: $c-nav;
+    box-shadow: 0 1px 0.5rem #CCCCCC;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    margin: 2rem 3.5rem 5rem;
+}
+
+.car__container img {
+    height: 120px;
+    width: 120px;
+
+}
+
+.car__title{
+    color: $c-textcard;
+    font-size: 1.1rem;
+    font-family: 'Handjet', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Tektur', cursive;
+}
+
+.car__amount{
+    color: $c-textcard;
+    font-size: 1.1rem;
+    font-family: 'Handjet', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Tektur', cursive;
+}
+
+.car__price{
+    color: $c-textcard;
+    font-size: 1.1rem;
+    font-family: 'Handjet', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Tektur', cursive;
+}
+
+.car__container__btn{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.car__btn{
+    background-color: transparent;
+    color: white;
+    height: 40px;
+    width: 30px;
+    cursor: pointer;
+}

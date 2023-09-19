@@ -488,3 +488,16 @@ const brandFilterDeepcool = "deepcool";
         `;
     });
 });
+
+// ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
+
+const btnBuy = document.querySelectorAll(".card__btn");
+btnBuy.forEach((boton, componentes) => {
+    boton.addEventListener("click", function () {
+    const productoSeleccionado = prodCompoPage[componentes];
+    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+    carrito.push(productoSeleccionado);
+    localStorage.setItem("miCarrito", JSON.stringify(carrito));
+    alert("Producto agregado al carrito");
+});
+});

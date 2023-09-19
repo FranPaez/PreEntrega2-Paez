@@ -1,4 +1,8 @@
+// ------------ Declaracion de variables ------------
+
 let prodMain = document.getElementById(`cardsMain`);
+
+// ------------ Cards dinamicas y aside dinamico ------------
 
 for (const itemsMain of prodMainPage){
     prodMain.innerHTML += `
@@ -12,9 +16,6 @@ for (const itemsMain of prodMainPage){
                 <h3> ${itemsMain.name} </h3>
                     <p class="card__price">$${itemsMain.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interes</p>
-                <div class="card__info__container">
-                    <a class="card__info" id="showPopup">Ver más info</a>
-                </div>
                 <div class="card__btn__container">
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -35,8 +36,15 @@ for (const picSponsors of asideMain){
     `
 }
 
-const showPopupButton = document.getElementById("showPopup");
+// ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
 
-showPopupButton.addEventListener("click", function() {
-    popup.style.display = "block";
+const btnBuy = document.querySelectorAll(".card__btn");
+btnBuy.forEach((boton, index) => {
+    boton.addEventListener("click", function () {
+    const productoSeleccionado = prodMainPage[index];
+    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+    carrito.push(productoSeleccionado);
+    localStorage.setItem("miCarrito", JSON.stringify(carrito));
+    alert("Producto agregado al carrito");
+});
 });

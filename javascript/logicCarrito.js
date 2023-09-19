@@ -1,4 +1,8 @@
+// ------------ Declaracion de variables ------------
+
 let asideCar = document.getElementById(`sponsorsOutMain`);
+
+// ------------ Cards dinamicas y aside dinamico ------------
 
 for (const picSponsors of asideOutMain){
     asideCar.innerHTML += `
@@ -9,3 +13,15 @@ for (const picSponsors of asideOutMain){
         </div>
     `
 }
+
+
+
+
+
+
+
+
+
+
+
+

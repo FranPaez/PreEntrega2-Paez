@@ -1,3 +1,5 @@
+
+
 const prodMainPage = [
     { id: 5, name: "RTX 3060 ti 8GB GDDR6", price: "281.800", 
         img: "./images/main/3060ti.png", alt: "placa de video rtx 3060ti"},
@@ -89,3 +91,5 @@ const asideOutMain = [
     {img: "../images/aside/nvidia.png", alt: "Nvidia marca asociada"},
     {img: "../images/aside/zotac.png", alt: "Zotak marca asociada"},
 ]
+
+const allProducts = [prodCompoPage, prodPerPage];

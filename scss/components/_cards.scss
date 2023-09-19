@@ -74,11 +74,16 @@ h3{
     padding: 0.3rem 0 1rem;
 }
 
+.card__btn__container{
+    margin: 1.5rem;
+}
+
 .card__btn{
     text-decoration: none;
     background-color: $c-btn;
     color: $c-textcard;
-    padding: 0.3rem 20% 0.5rem;
+    padding: 0.3rem 25% 0.5rem;
+    
     border-radius: 1rem;
     cursor: pointer;
 }

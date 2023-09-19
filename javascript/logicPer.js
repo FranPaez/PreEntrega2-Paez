@@ -186,7 +186,7 @@ const categoryFilterHeadphones = "auriculares";
                     <h3>${producto.name}</h3>
                     <p class="card__price">${producto.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
-                    <a class="card__btn">Comprar</a>
+                    <a class="card__btn" >Comprar</a>
                 </div>
             </div>
         `;
@@ -213,7 +213,7 @@ const categoryFilterAccessory = "accesorio";
                     <h3>${producto.name}</h3>
                     <p class="card__price">${producto.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
-                    <a class="card__btn">Comprar</a>
+                    <a class="card__btn" >Comprar</a>
                 </div>
             </div>
         `;
@@ -243,7 +243,7 @@ const brandFilterHx = "hyperx";
                     <h3>${producto.name}</h3>
                     <p class="card__price">${producto.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
-                    <a class="card__btn">Comprar</a>
+                    <a class="card__btn" >Comprar</a>
                 </div>
             </div>
         `;
@@ -302,4 +302,17 @@ const brandFilterSS = "steelseries";
             </div>
         `;
     });
+});
+
+// ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
+
+const btnBuy = document.querySelectorAll(".card__btn");
+btnBuy.forEach((boton, perifericos) => {
+    boton.addEventListener("click", function () {
+    const productoSeleccionado = prodPerPage[perifericos];
+    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+    carrito.push(productoSeleccionado);
+    localStorage.setItem("miCarrito", JSON.stringify(carrito));
+    alert("Producto agregado al carrito");
+});
 });

@@ -9,14 +9,14 @@ for (const itemsMain of prodMainPage){
         <div class="card__container">
             <div class="card__body">
                 <a>
-                    <img src="${itemsMain.img}" alt="${itemsMain.alt}">
+                    <img src="${itemsMain.img2}" alt="${itemsMain.alt}">
                 </a>
             </div>
             <div class="card__details">
                 <h3> ${itemsMain.name} </h3>
                     <p class="card__price">$${itemsMain.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interes</p>
-                <div class="card__btn__container">
+                <div class="card__btn__container"  class="btn_toast">
                     <a class="card__btn">Comprar</a>
                 </div>
             </div>
@@ -41,10 +41,28 @@ for (const picSponsors of asideMain){
 const btnBuy = document.querySelectorAll(".card__btn");
 btnBuy.forEach((boton, index) => {
     boton.addEventListener("click", function () {
-    const productoSeleccionado = prodMainPage[index];
-    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
-    carrito.push(productoSeleccionado);
-    localStorage.setItem("miCarrito", JSON.stringify(carrito));
-    alert("Producto agregado al carrito");
+        const productoSeleccionado = prodMainPage[index];
+        const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+        const productoExistenteIndex = carrito.findIndex(p => p.id === productoSeleccionado.id);
+        if (productoExistenteIndex !== -1) {
+            carrito[productoExistenteIndex].cantidad += 1;
+        } else {
+            carrito.push({ ...productoSeleccionado, cantidad: 1 });
+        }
+        localStorage.setItem("miCarrito", JSON.stringify(carrito));
+        Toastify({
+            text: "Agregado al carrito",
+            duration: 3000,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+        }).showToast();
+    });
 });
-});
+
+/*
+const localStorageData = localStorage.getItem('miCarrito');
+const dataArray = JSON.parse(localStorageData)
+const carritoLocal = []
+carritoLocal.push(localStorageData)*/
+

@@ -1,22 +1,22 @@
 
 
 const prodMainPage = [
-    { id: 5, name: "RTX 3060 ti 8GB GDDR6", price: "281.800", 
-        img: "./images/main/3060ti.png", alt: "placa de video rtx 3060ti"},
-    { id: 6, name: "RTX 3090ti 24GB GDDR6", price: "522.100", 
-        img: "./images/main/3090ti.png", alt: "placa de video rtx 3090ti"},
-    { id: 3, name: "Intel Core i7 12700K", price: "337.400", 
-        img: "./images/main/i7.png", alt: "procesador i7 de doceava generacion"},
-    { id: 7, name: "RX 6900XT 16GB GDDR6", price: "432.600", 
-        img: "./images/main/rx 6900xt.png", alt: "placa de video rx 6900xt"},
-    { id: 4, name: "Ryzen 7 5800x 4.7GHz", price: "252.600", 
-        img: "./images/main/ryzen.png", alt: "procesador ryzen 7 de quinta generacion"},
-    { id: 17, name: "HyperX Cloud Core II", price: "69.800", 
-        img: "./images/perifericos/auricular-hyperx.png", alt: "Auriculares HyperX"},
-    { id: 13, name: "Mouse Razer Deathadder", price: "23.000", 
-        img: "./images/perifericos/mouse-razer.png", alt: "Mouse razer deathadder"},
-    { id: 15, name: "Teclado HyperX Alloy FPS", price: "50.000", 
-        img: "./images/perifericos/teclado-hyperx.png", alt: "Teclado hyperx alloy fps"},
+    { id: 5, name: "RTX 3060 ti 8GB GDDR6", price: "281.800", img: "../images/main/3060ti.png",
+        img2: "./images/main/3060ti.png", alt: "placa de video rtx 3060ti",},
+    { id: 6, name: "RTX 3090ti 24GB GDDR6", price: "522.100", img: "../images/main/3090ti.png",
+        img2: "./images/main/3090ti.png", alt: "placa de video rtx 3090ti",},
+    { id: 3, name: "Intel Core i7 12700K", price: "337.400", img: "../images/main/i7.png",
+        img2: "./images/main/i7.png", alt: "procesador i7 de doceava generacion",},
+    { id: 7, name: "RX 6900XT 16GB GDDR6", price: "432.600", img: "../images/main/rx 6900xt.png",
+        img2: "./images/main/rx 6900xt.png", alt: "placa de video rx 6900xt",},
+    { id: 4, name: "Ryzen 7 5800x 4.7GHz", price: "252.600", img: "../images/main/ryzen.png",
+        img2: "./images/main/ryzen.png", alt: "procesador ryzen 7 de quinta generacion",},
+    { id: 17, name: "HyperX Cloud Core II", price: "69.800", img: "../images/perifericos/auricular-hyperx.png",
+        img2: "./images/perifericos/auricular-hyperx.png", alt: "Auriculares HyperX",},
+    { id: 13, name: "Mouse Razer Deathadder", price: "23.000", img: "../images/perifericos/mouse-razer.png",
+        img2: "./images/perifericos/mouse-razer.png", alt: "Mouse razer deathadder",},
+    { id: 15, name: "Teclado HyperX Alloy FPS", price: "50.000", img: "../images/perifericos/teclado-hyperx.png",
+        img2: "./images/perifericos/teclado-hyperx.png", alt: "Teclado hyperx alloy fps",},
 ]
 
 const asideMain = [
@@ -93,3 +93,6 @@ const asideOutMain = [
 ]
 
 const allProducts = [prodCompoPage, prodPerPage];
+
+
+

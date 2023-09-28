@@ -492,12 +492,25 @@ const brandFilterDeepcool = "deepcool";
 // ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
 
 const btnBuy = document.querySelectorAll(".card__btn");
-btnBuy.forEach((boton, componentes) => {
+btnBuy.forEach((boton, index) => {
     boton.addEventListener("click", function () {
-    const productoSeleccionado = prodCompoPage[componentes];
-    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
-    carrito.push(productoSeleccionado);
-    localStorage.setItem("miCarrito", JSON.stringify(carrito));
-    alert("Producto agregado al carrito");
+        const productoSeleccionado = prodCompoPage[index];
+        const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+        const productoExistenteIndex = carrito.findIndex(p => p.id === productoSeleccionado.id);
+        if (productoExistenteIndex !== -1) {
+            carrito[productoExistenteIndex].cantidad += 1;
+        } else {
+            carrito.push({ ...productoSeleccionado, cantidad: 1 });
+        }
+        localStorage.setItem("miCarrito", JSON.stringify(carrito));
+        Toastify({
+            text: "Agregado al carrito",
+            duration: 3000,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+        }).showToast();
+    });
 });
-});
+
+

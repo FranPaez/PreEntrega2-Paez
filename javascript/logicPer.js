@@ -4,26 +4,55 @@
 let prodPer = document.getElementById(`cardsPer`);
 let precioMinimo = 0;
 let precioMaximo = Number.POSITIVE_INFINITY;
+const jsonFile = '../basedatos.JSON'
 
 // ------------ Cards dinamicas ------------
 
-for (const itemsPer of prodPerPage){
-    prodPer.innerHTML += `
+fetch(jsonFile)
+    .then(response => response.json())
+    .then(data => {
+    const prodPerPageArray = data.prodPerPage;
+
+    for (const item of prodPerPageArray) {
+        prodPer.innerHTML += `
         <div class="card__prod">
             <div class="card__prodcontainer">
                 <a>
-                <img src="${itemsPer.img}" alt="${itemsPer.alt}">
+                    <img src="${item.img}" alt="${item.alt}">
                 </a>
             </div>
             <div class="card__proddetails">
-            <h3>${itemsPer.name}</h3>
-                <p class="card__price">${itemsPer.price}</p>
-                <p class="card__pay">Hasta 6 cuotas sin interes</p>
-                <a class="card__btn">Comprar</a>
+                <h3>${item.name}</h3>
+                    <p class="card__price">$${item.price}</p>
+                    <p class="card__pay">Hasta 6 cuotas sin interés</p>
+                    <a class="card__btn">Comprar</a>
             </div>
         </div>
-    `
-}
+    `;
+    }
+})
+
+fetch(jsonFile)
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`Error al cargar el archivo JSON: ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+    const asideOutMain = data.asideOutMain;
+    const asideCar = document.getElementById('sponsorsOutMain');
+
+    for (const picSponsors of asideOutMain) {
+        asideCar.innerHTML += `
+        <div>
+            <h3>
+                <img src="${picSponsors.img}" alt="${picSponsors.alt}">
+            </h3>
+        </div>
+        `;
+    }
+    });
 
 // ------------ Funciones aplicadas a las listas ------------
 

@@ -1,30 +1,71 @@
 // ------------ Declaracion de variables ------------
 
 let asideCar = document.getElementById(`sponsorsOutMain`);
+const jsonFilePath = '../basedatos.JSON'
 
-// ------------ Cards dinamicas y aside dinamico ------------
+// ------------ Cards, aside y elementos dinamicos ------------
 
-for (const picSponsors of asideOutMain){
-    asideCar.innerHTML += `
+fetch(jsonFilePath)
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`Error al cargar el archivo JSON: ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+    const asideOutMain = data.asideOutMain;
+    const asideCar = document.getElementById('sponsorsOutMain');
+
+    for (const picSponsors of asideOutMain) {
+        asideCar.innerHTML += `
         <div>
             <h3>
                 <img src="${picSponsors.img}" alt="${picSponsors.alt}">
             </h3>
         </div>
-    `
-}
+        `;
+    }
+    });
 
-const btnBuy = document.querySelectorAll(".card__btn");
-btnBuy.forEach((boton, index) => {
-    boton.addEventListener("click", function () {
+
+function noElements() {
+    console.log("Ejecutando noElements()")
+    const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
+    const noElementsElement = document.getElementById("noElements");
+    const noMoreBuyBtn = document.getElementById("moreBuy");
+    const totalBuy = document.getElementById("totalBuy");
+    const btnBuy = document.getElementById("btnBuy");
+    if (carritoData && carritoData.length > 0) {
+        noElementsElement.style.display = "none";
+        noMoreBuyBtn.style.display = "none";
+        totalBuy.style.display = "block";
+        btnBuy.style.display = "block";
+    } else {
+        noElementsElement.style.display = "block";
+        noMoreBuyBtn.style.display = "block";
+        totalBuy.style.display = "none";
+        btnBuy.style.display = "none";
+    }
+}
+noElements();
+
+const carritoContainer = document.getElementById(`cardsCar`);
+carritoContainer.addEventListener("click", (event) => {
+    const target = event.target;
+    
+    if (target.classList.contains("card__btn")) {
+        const index = Array.from(carritoContainer.children).indexOf(target.closest(".car__container"));
+        
         const productoSeleccionado = prodMainPage[index];
         const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
         const productoExistenteIndex = carrito.findIndex(p => p.id === productoSeleccionado.id);
+
         if (productoExistenteIndex !== -1) {
             carrito[productoExistenteIndex].cantidad += 1;
         } else {
             carrito.push({ ...productoSeleccionado, cantidad: 1 });
         }
+
         localStorage.setItem("miCarrito", JSON.stringify(carrito));
         Toastify({
             text: "Agregado al carrito",
@@ -33,7 +74,9 @@ btnBuy.forEach((boton, index) => {
             gravity: "bottom",
             position: "right",
         }).showToast();
-    });
+        actualizarCarrito();
+        noElements();
+    }
 });
 
 const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
@@ -59,34 +102,16 @@ if (carritoData !== null) {
         card.innerHTML = cardContent;
         carritoContainer.appendChild(card);
     });
-} else {
-    console.log("No hay datos en el carrito");
 }
 
-// ------------ Se le agregan eventos a a los boton de + y -  ------------
-
-const btnDecrement = document.querySelectorAll(".car__btn-decrement");
-const btnIncrement = document.querySelectorAll(".car__btn-increment");
-
-btnDecrement.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        decrementarCantidad(index);
-    });
-});
-
-btnIncrement.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        incrementarCantidad(index);
-    });
-});
-
-// ------------ Se les da funcionalidades de disminuir y eliminar elementos del localstorage  ------------
+// ------------ Se les da funcionalidades de  incrementar, disminuir y eliminar elementos del localstorage  ------------
 
 function incrementarCantidad(index) {
     const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
     carritoData[index].cantidad += 1;
     localStorage.setItem("miCarrito", JSON.stringify(carritoData));
     actualizarCarrito();
+    noElements();
 }
 
 function decrementarCantidad(index) {
@@ -94,16 +119,21 @@ function decrementarCantidad(index) {
         carritoData[index].cantidad -= 1;
         localStorage.setItem("miCarrito", JSON.stringify(carritoData));
         actualizarCarrito();
+        noElements();
     }
 
 
 function actualizarCarrito() {
+    console.log("Entrando en actualizarCarrito()");
     const carritoContainer = document.getElementById(`cardsCar`);
     carritoContainer.innerHTML = '';
     const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
+    let totalPrecio = 0;
 
     carritoData.forEach(product => {
         const cantidad = product.cantidad !== undefined ? product.cantidad : 1;
+        const total = product.price * product.cantidad;
+        const totalString = total.toLocaleString();
         const cardContent = `
             <div class="car__container">
                 <img src="${product.img}" alt="${product.alt}"> 
@@ -113,14 +143,20 @@ function actualizarCarrito() {
                     <p class="car__amount">${cantidad}</p>
                     <button class="car__btn-increment">+</button>
                 </div>
-                <p class="car__price">${product.price}</p>
+                <p class="car__price">$${totalString}</p>
             </div>
         `;
+        totalPrecio += product.price * cantidad;
         const card = document.createElement("div");
         card.innerHTML = cardContent;
         carritoContainer.appendChild(card);
     });
+
+    const totalBuy = document.getElementById("totalBuy");
+    totalBuy.textContent = `Total: $${totalPrecio.toFixed(2)}`;
+    
     agregarEventListeners();
+    console.log("Saliendo de actualizarCarrito()");
 }
 
 function agregarEventListeners() {
@@ -159,21 +195,4 @@ function decrementarCantidad(index) {
     actualizarCarrito();
 }
 
-// ------------ Creacion del total a abonar ------------
-
-
-const nuevoDiv = document.createElement("div");
-
-// Configurar propiedades del elemento (opcional)
-nuevoDiv.className = "mi-clase";
-nuevoDiv.textContent = "¡Hola, soy un nuevo elemento!";
-
-// Agregar el nuevo elemento al DOM
-const contenedor = document.getElementById("miContenedor"); // Reemplaza "miContenedor" con el ID de tu contenedor
-contenedor.appendChild(nuevoDiv);
-
-
-
-
-
-
+// ------------ Boton de pagar y total del precio ------------

@@ -5,36 +5,55 @@ let prodCompo = document.getElementById(`cardsCompo`);
 let asideComp = document.getElementById(`sponsorsOutMain`);
 let precioMinimo = 0;
 let precioMaximo = Number.POSITIVE_INFINITY;
+const jsonFile = '../basedatos.JSON'
 
 // ------------ Cards dinamicas y aside dinamico ------------
 
-for (const itemsCompo of prodCompoPage){
-    cardsCompo.innerHTML += `
+fetch(jsonFile)
+    .then(response => response.json())
+    .then(data => {
+    const prodCompoPageArray = data.prodCompoPage;
+
+    for (const item of prodCompoPageArray) {
+        prodCompo.innerHTML += `
         <div class="card__prod">
             <div class="card__prodcontainer">
                 <a>
-                    <img src="${itemsCompo.img}" alt="${itemsCompo.alt}">
+                    <img src="${item.img}" alt="${item.alt}">
                 </a>
-        </div>
-        <div class="card__proddetails">
-            <h3>${itemsCompo.name}</h3>
-                <p class="card__price">$${itemsCompo.price}</p>
-                <p class="card__pay">Hasta 6 cuotas sin interes</p>
-                <a class="card__btn">Comprar</a>
+            </div>
+            <div class="card__proddetails">
+                <h3>${item.name}</h3>
+                    <p class="card__price">$${item.price}</p>
+                    <p class="card__pay">Hasta 6 cuotas sin interés</p>
+                    <a class="card__btn">Comprar</a>
             </div>
         </div>
-    `
-}
+    `;
+    }
+})
 
-for (const picSponsors of asideOutMain){
-    asideComp.innerHTML += `
+fetch(jsonFile)
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`Error al cargar el archivo JSON: ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+    const asideOutMain = data.asideOutMain;
+    const asideCar = document.getElementById('sponsorsOutMain');
+
+    for (const picSponsors of asideOutMain) {
+        asideCar.innerHTML += `
         <div>
             <h3>
                 <img src="${picSponsors.img}" alt="${picSponsors.alt}">
             </h3>
         </div>
-    `
-}
+        `;
+    }
+    });
 
 // ------------ Funciones aplicadas a las listas ------------
 

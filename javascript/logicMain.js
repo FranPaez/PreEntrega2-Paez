@@ -11,6 +11,7 @@ fetch(jsonFile)
     const prodMainPageArray = data.prodMainPage;
 
     for (const item of prodMainPageArray) {
+        const priceString = Number(item.price).toLocaleString();
         prodMain.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -20,7 +21,7 @@ fetch(jsonFile)
             </div>
             <div class="card__proddetails">
                 <h3>${item.name}</h3>
-                    <p class="card__price">$${item.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
             </div>
@@ -54,8 +55,12 @@ fetch(jsonFile)
 
 // ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
 
-const btnBuy = document.querySelectorAll(".card__btn");
-btnBuy.forEach((boton, index) => {
+fetch(jsonFile)
+    .then(response => response.json())
+    .then(data => {
+    const prodMainPage = data.prodMainPage;
+    const btnBuy = document.querySelectorAll(".card__btn");
+    btnBuy.forEach((boton, index) => {
     boton.addEventListener("click", function () {
         const productoSeleccionado = prodMainPage[index];
         const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
@@ -73,7 +78,8 @@ btnBuy.forEach((boton, index) => {
             gravity: "bottom",
             position: "right",
         }).showToast();
+        });
     });
-});
+})
 
 

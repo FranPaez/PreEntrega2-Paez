@@ -14,6 +14,7 @@ fetch(jsonFile)
     const prodPerPageArray = data.prodPerPage;
 
     for (const item of prodPerPageArray) {
+        const priceString = Number(item.price).toLocaleString();
         prodPer.innerHTML += `
         <div class="card__prod">
             <div class="card__prodcontainer">
@@ -23,7 +24,7 @@ fetch(jsonFile)
             </div>
             <div class="card__proddetails">
                 <h3>${item.name}</h3>
-                    <p class="card__price">$${item.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
             </div>
@@ -58,25 +59,28 @@ fetch(jsonFile)
 
 // ------------ Funciones en la seccion productos de las listas ------------
 
+const formatearPrecio = (precio) => Number(precio).toLocaleString();
+
 const filtrarPorPrecioMinimo = (prodPerPage, precioMin, precioMax) => {
     const filterMin = prodPerPage.filter(item => item.price >= precioMin && item.price <= precioMax);
-    filterMin.sort((a,b) => a.price - b.price);
-    return filterMin
-}
+    filterMin.sort((a, b) => a.price - b.price);
+    return filterMin.map(item => ({ ...item, price: formatearPrecio(item.price) }));
+};
 
 const filtrarPorPrecioMaximo = (prodPerPage, precioMin, precioMax) => {
     const filterMax = prodPerPage.filter(item => item.price >= precioMin && item.price <= precioMax);
-    filterMax.sort((a,b) => b.price - a.price);
-    return filterMax
-}
+    filterMax.sort((a, b) => b.price - a.price);
+    return filterMax.map(item => ({ ...item, price: formatearPrecio(item.price) }));
+};
 
 const listaDeOpciones = document.querySelectorAll(".priceP__list li");
 
 const handleMostrarTodos = () => {
-    mostrarProductos(prodPerPage); // Mostrar todos los productos sin filtrar
+    const productosFormateados = prodPerPage.map(item => ({ ...item, price: formatearPrecio(item.price) }));
+    mostrarProductos(productosFormateados);
 };
 
-const handlePrecioMenosAMayor = () => {
+const handlePrecioMenorAMayor = () => {
     const productosFiltrados = filtrarPorPrecioMinimo(prodPerPage, precioMinimo, precioMaximo); 
     mostrarProductos(productosFiltrados);
 };
@@ -87,7 +91,7 @@ const handlePrecioMayorAMenor = () => {
 };
 
 listaDeOpciones[0].addEventListener("click", handleMostrarTodos);
-listaDeOpciones[1].addEventListener("click", handlePrecioMenosAMayor); 
+listaDeOpciones[1].addEventListener("click", handlePrecioMenorAMayor); 
 listaDeOpciones[2].addEventListener("click", handlePrecioMayorAMenor);
 const mostrarProductos = (productos) => {
     let contenidoHTML = "";
@@ -101,7 +105,7 @@ const mostrarProductos = (productos) => {
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${producto.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -122,6 +126,7 @@ const categoryFilterMouse = "mouse";
     })
     prodPer.innerHTML = "";
     categoriaMouse.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -131,7 +136,7 @@ const categoryFilterMouse = "mouse";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -149,6 +154,7 @@ const categoryFilterKeyboard = "teclado";
     })
     prodPer.innerHTML = "";
     categoriaKeyboard.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -158,7 +164,7 @@ const categoryFilterKeyboard = "teclado";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -177,6 +183,7 @@ const categoryFilterMousepad = "mousepad";
     })
     prodPer.innerHTML = "";
     categoriaMousepad.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -186,7 +193,7 @@ const categoryFilterMousepad = "mousepad";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -204,6 +211,7 @@ const categoryFilterHeadphones = "auriculares";
     })
     prodPer.innerHTML = "";
     categoriaHeadphones.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -213,7 +221,7 @@ const categoryFilterHeadphones = "auriculares";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -231,6 +239,7 @@ const categoryFilterAccessory = "accesorio";
     })
     prodPer.innerHTML = "";
     categoriaAccessory.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -240,7 +249,7 @@ const categoryFilterAccessory = "accesorio";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -261,6 +270,7 @@ const brandFilterHx = "hyperx";
     });
     prodPer.innerHTML = "";
     marcaHyperx.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -270,7 +280,7 @@ const brandFilterHx = "hyperx";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -288,6 +298,7 @@ const brandFilterRZ = "razer";
     });
     prodPer.innerHTML = "";
     marcaRazer.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -297,7 +308,7 @@ const brandFilterRZ = "razer";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -315,6 +326,7 @@ const brandFilterSS = "steelseries";
     });
     prodPer.innerHTML = "";
     marcaSteelseries.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodPer.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -324,7 +336,7 @@ const brandFilterSS = "steelseries";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -335,8 +347,12 @@ const brandFilterSS = "steelseries";
 
 // ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
 
-const btnBuy = document.querySelectorAll(".card__btn");
-btnBuy.forEach((boton, index) => {
+fetch(jsonFile)
+    .then(response => response.json())
+    .then(data => {
+    const prodPerPage = data.prodPerPage;
+    const btnBuy = document.querySelectorAll(".card__btn");
+    btnBuy.forEach((boton, index) => {
     boton.addEventListener("click", function () {
         const productoSeleccionado = prodPerPage[index];
         const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
@@ -354,6 +370,7 @@ btnBuy.forEach((boton, index) => {
             gravity: "bottom",
             position: "right",
         }).showToast();
+        });
     });
-});
+})
 

@@ -15,6 +15,7 @@ fetch(jsonFile)
     const prodCompoPageArray = data.prodCompoPage;
 
     for (const item of prodCompoPageArray) {
+        const priceString = Number(item.price).toLocaleString();
         prodCompo.innerHTML += `
         <div class="card__prod">
             <div class="card__prodcontainer">
@@ -24,7 +25,7 @@ fetch(jsonFile)
             </div>
             <div class="card__proddetails">
                 <h3>${item.name}</h3>
-                    <p class="card__price">$${item.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
             </div>
@@ -59,22 +60,24 @@ fetch(jsonFile)
 
 // ------------ Funciones en la seccion productos de las listas ------------
 
-const filtrarPorPrecioMinimo = (prodCompoPage, precioMin, precioMax) => {
-    const filterMin = prodCompoPage.filter(item => item.price >= precioMin && item.price <= precioMax);
-    filterMin.sort((a,b) => a.price - b.price);
-    return filterMin
-}
+const formatearPrecio = (precio) => Number(precio).toLocaleString();
 
-const filtrarPorPrecioMaximo = (prodCompoPage, precioMin, precioMax) => {
-    const filterMax = prodCompoPage.filter(item => item.price >= precioMin && item.price <= precioMax);
-    filterMax.sort((a,b) => b.price - a.price);
-    return filterMax
-}
+const filtrarPorPrecioMinimo = (prodPerPage, precioMin, precioMax) => {
+    const filterMin = prodPerPage.filter(item => item.price >= precioMin && item.price <= precioMax);
+    filterMin.sort((a, b) => a.price - b.price);
+    return filterMin.map(item => ({ ...item, price: formatearPrecio(item.price) }));
+};
 
+const filtrarPorPrecioMaximo = (prodPerPage, precioMin, precioMax) => {
+    const filterMax = prodPerPage.filter(item => item.price >= precioMin && item.price <= precioMax);
+    filterMax.sort((a, b) => b.price - a.price);
+    return filterMax.map(item => ({ ...item, price: formatearPrecio(item.price) }));
+};
 const listaDeOpciones = document.querySelectorAll(".priceC__list li");
 
 const handleMostrarTodos = () => {
-    mostrarProductos(prodCompoPage); 
+    const productosFormateados = prodCompoPage.map(item => ({ ...item, price: formatearPrecio(item.price) }));
+    mostrarProductos(productosFormateados); 
 };
 
 const handlePrecioMenosAMayor = () => {
@@ -102,7 +105,7 @@ const mostrarProductos = (productos) => {
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${producto.price}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -123,6 +126,7 @@ const categoryFilterProcessor = "procesador";
     })
     prodCompo.innerHTML = "";
     categoriaProcesador.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -132,7 +136,7 @@ const categoryFilterProcessor = "procesador";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -149,6 +153,7 @@ const categoryFilterMotherboard = "motherboard";
     })
     prodCompo.innerHTML = "";
     categoriaPlacaMadre.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -158,7 +163,7 @@ const categoryFilterMotherboard = "motherboard";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -175,6 +180,7 @@ const categoryFilterVideocard = "videocard";
     })
     prodCompo.innerHTML = "";
     categoriaPlacaDeVideo.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -184,7 +190,7 @@ const categoryFilterVideocard = "videocard";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -201,6 +207,7 @@ const categoryFilterRam = "ram";
     })
     prodCompo.innerHTML = "";
     categoriaMemoriaRam.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -210,7 +217,7 @@ const categoryFilterRam = "ram";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -227,6 +234,7 @@ const categoryFilterDisck = "disco";
     })
     prodCompo.innerHTML = "";
     categoriaDisco.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -236,7 +244,7 @@ const categoryFilterDisck = "disco";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -253,6 +261,7 @@ const categoryFilterRefrigeration = "refrigeracion";
     })
     prodCompo.innerHTML = "";
     categoriaRefrigeracion.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -262,7 +271,7 @@ const categoryFilterRefrigeration = "refrigeracion";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -279,6 +288,7 @@ const categoryFilterCase = "gabinete";
     })
     prodCompo.innerHTML = "";
     categoriaGabinete.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -288,7 +298,7 @@ const categoryFilterCase = "gabinete";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -296,6 +306,7 @@ const categoryFilterCase = "gabinete";
         `;
     });
 });
+
 // ------------ Funciones en la seccion marcas de las listas ------------
 
 const elementIntel = document.getElementById("brandC__list").getElementsByTagName("li")[0];
@@ -307,6 +318,7 @@ const brandFilterIntel = "intel";
     });
     prodCompo.innerHTML = "";
     marcaIntel.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -316,7 +328,7 @@ const brandFilterIntel = "intel";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -333,6 +345,7 @@ const brandFilterAmd = "amd";
     });
     prodCompo.innerHTML = "";
     marcaAmd.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -342,7 +355,7 @@ const brandFilterAmd = "amd";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -359,6 +372,7 @@ const brandFilterMsi = "msi";
     });
     prodCompo.innerHTML = "";
     marcaMsi.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -368,7 +382,7 @@ const brandFilterMsi = "msi";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -385,6 +399,7 @@ const brandFilterAsus = "asus";
     });
     prodCompo.innerHTML = "";
     marcaAsus.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -394,7 +409,7 @@ const brandFilterAsus = "asus";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -412,6 +427,7 @@ const brandFilterHx = "hyperx";
     });
     prodCompo.innerHTML = "";
     marcaHyperx.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -421,7 +437,7 @@ const brandFilterHx = "hyperx";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -438,6 +454,7 @@ const brandFilterCorsair = "corsair";
     });
     prodCompo.innerHTML = "";
     marcaCorsair.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -447,7 +464,7 @@ const brandFilterCorsair = "corsair";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -464,6 +481,7 @@ const brandFilterCoolmaster = "coolmaster";
     });
     prodCompo.innerHTML = "";
     marcaCoolmaster.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -473,7 +491,7 @@ const brandFilterCoolmaster = "coolmaster";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -490,6 +508,7 @@ const brandFilterDeepcool = "deepcool";
     });
     prodCompo.innerHTML = "";
     marcaDeepcool.forEach(producto => {
+        const priceString = Number(producto.price).toLocaleString();
         prodCompo.innerHTML += `
             <div class="card__prod">
                 <div class="card__prodcontainer">
@@ -499,7 +518,7 @@ const brandFilterDeepcool = "deepcool";
                 </div>
                 <div class="card__proddetails">
                     <h3>${producto.name}</h3>
-                    <p class="card__price">${producto.price}</p>
+                    <p class="card__price">$${priceString}</p>
                     <p class="card__pay">Hasta 6 cuotas sin interés</p>
                     <a class="card__btn">Comprar</a>
                 </div>
@@ -510,8 +529,12 @@ const brandFilterDeepcool = "deepcool";
 
 // ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
 
-const btnBuy = document.querySelectorAll(".card__btn");
-btnBuy.forEach((boton, index) => {
+fetch(jsonFile)
+    .then(response => response.json())
+    .then(data => {
+    const prodComponPage = data.prodCompoPage;
+    const btnBuy = document.querySelectorAll(".card__btn");
+    btnBuy.forEach((boton, index) => {
     boton.addEventListener("click", function () {
         const productoSeleccionado = prodCompoPage[index];
         const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
@@ -529,7 +552,7 @@ btnBuy.forEach((boton, index) => {
             gravity: "bottom",
             position: "right",
         }).showToast();
+        });
     });
-});
-
+})
 

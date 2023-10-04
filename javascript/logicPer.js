@@ -3,7 +3,7 @@
 let prodPer = document.getElementById(`cardsPer`);
 let precioMinimo = 0;
 let precioMaximo = Number.POSITIVE_INFINITY;
-const jsonFile = '../javascript/basedatos.json'
+const jsonFile = './javascript/basedatos.json'
 
 // ------------ Cards dinamicas ------------
 

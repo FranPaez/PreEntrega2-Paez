@@ -1,7 +1,7 @@
 // ------------ Declaracion de variables y JSON ------------
 
 let asideCar = document.getElementById(`sponsorsOutMain`);
-const jsonFile = '../javascript/basedatos.json'
+const jsonFile = './javascript/basedatos.json'
 const carritoContainer = document.getElementById(`cardsCar`);
 const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
 document.addEventListener("DOMContentLoaded", function () {

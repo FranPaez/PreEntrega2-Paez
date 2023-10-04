@@ -1,7 +1,7 @@
 // ------------ Declaracion de variables ------------
 
 let prodMain = document.getElementById(`cardsMain`);
-const jsonFile = './basedatos.JSON'
+const jsonFile = './javascript/basedatos.json'
 
 // ------------ Cards dinamicas y aside dinamico ------------
 

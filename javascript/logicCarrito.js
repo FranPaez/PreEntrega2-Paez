@@ -1,7 +1,7 @@
 // ------------ Declaracion de variables ------------
 
 let asideCar = document.getElementById(`sponsorsOutMain`);
-const jsonFile = '../basedatos.JSON'
+const jsonFile = './javascript/basedatos.json'
 document.addEventListener("DOMContentLoaded", function () {
     noElements();
 });

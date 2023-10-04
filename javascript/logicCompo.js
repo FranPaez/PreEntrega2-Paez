@@ -5,7 +5,7 @@ let prodCompo = document.getElementById(`cardsCompo`);
 let asideComp = document.getElementById(`sponsorsOutMain`);
 let precioMinimo = 0;
 let precioMaximo = Number.POSITIVE_INFINITY;
-const jsonFile = '../basedatos.JSON'
+const jsonFile = './javascript/basedatos.json'
 
 // ------------ Cards dinamicas y aside dinamico ------------
 

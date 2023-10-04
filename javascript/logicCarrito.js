@@ -1,7 +1,9 @@
-// ------------ Declaracion de variables ------------
+// ------------ Declaracion de variables y JSON ------------
 
 let asideCar = document.getElementById(`sponsorsOutMain`);
-const jsonFile = './javascript/basedatos.json'
+const jsonFile = '../javascript/basedatos.json'
+const carritoContainer = document.getElementById(`cardsCar`);
+const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
 document.addEventListener("DOMContentLoaded", function () {
     noElements();
 });
@@ -11,10 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 actualizarCarrito();
 
 function actualizarCarrito() {
-    console.log("Entrando en actualizarCarrito()");
-    const carritoContainer = document.getElementById(`cardsCar`);
     carritoContainer.innerHTML = '';
-    const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
     let totalPrecio = 0;
 
     carritoData.forEach(product => {
@@ -43,7 +42,6 @@ function actualizarCarrito() {
     totalBuy.textContent = `Total a abonar: $${totalPrecio.toLocaleString()}`;
     
     agregarEventListeners();
-    console.log("Saliendo de actualizarCarrito()");
 }
 
 
@@ -71,8 +69,6 @@ fetch(jsonFile)
 
 
 function noElements() {
-    console.log("Ejecutando noElements()")
-    const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
     const noElementsElement = document.getElementById("noElements");
     const noMoreBuyBtn = document.getElementById("moreBuy");
     const totalBuy = document.getElementById("totalBuy");
@@ -91,7 +87,7 @@ function noElements() {
 }
 
 
-const carritoContainer = document.getElementById(`cardsCar`);
+
 carritoContainer.addEventListener("click", (event) => {
     const target = event.target;
     
@@ -120,10 +116,9 @@ carritoContainer.addEventListener("click", (event) => {
     }
 });
 
-const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
+
 
 if (carritoData !== null) {
-    const carritoContainer = document.getElementById(`cardsCar`);
     carritoContainer.innerHTML = '';
     carritoData.forEach(product => {
         const priceString = Number(product.price).toLocaleString();
@@ -169,14 +164,11 @@ function agregarEventListeners() {
 agregarEventListeners();
 
 function incrementarCantidad(index) {
-    const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
     carritoData[index].cantidad += 1;
-    localStorage.setItem("miCarrito", JSON.stringify(carritoData));
     actualizarCarrito();
 }
 
 function decrementarCantidad(index) {
-    const carritoData = JSON.parse(localStorage.getItem("miCarrito"));
     if (carritoData[index].cantidad > 1) {
         carritoData[index].cantidad -= 1;
     } else {

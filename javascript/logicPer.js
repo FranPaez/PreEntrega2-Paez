@@ -1,10 +1,9 @@
-
-// ------------ Declaracion de variables ------------
+// ------------ Declaracion de variables y JSON ------------
 
 let prodPer = document.getElementById(`cardsPer`);
 let precioMinimo = 0;
 let precioMaximo = Number.POSITIVE_INFINITY;
-const jsonFile = './javascript/basedatos.json'
+const jsonFile = '../javascript/basedatos.json'
 
 // ------------ Cards dinamicas ------------
 
@@ -345,7 +344,7 @@ const brandFilterSS = "steelseries";
     });
 });
 
-// ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
+// ------------ Logica del funcionamiento del carrito ------------
 
 fetch(jsonFile)
     .then(response => response.json())

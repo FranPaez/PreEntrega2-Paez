@@ -1,11 +1,10 @@
-
-// ------------ Declaracion de variables ------------
+// ------------ Declaracion de variables y JSON ------------cardsCompo
 
 let prodCompo = document.getElementById(`cardsCompo`);
 let asideComp = document.getElementById(`sponsorsOutMain`);
 let precioMinimo = 0;
 let precioMaximo = Number.POSITIVE_INFINITY;
-const jsonFile = './javascript/basedatos.json'
+const jsonFile = '../javascript/basedatos.json'
 
 // ------------ Cards dinamicas y aside dinamico ------------
 
@@ -43,7 +42,7 @@ fetch(jsonFile)
     })
     .then(data => {
     const asideOutMain = data.asideOutMain;
-    const asideCar = document.getElementById('sponsorsOutMain');
+    const asideCar = asideComp
 
     for (const picSponsors of asideOutMain) {
         asideCar.innerHTML += `
@@ -527,7 +526,7 @@ const brandFilterDeepcool = "deepcool";
     });
 });
 
-// ------------ Logica del funcionamiento del carrito, de momento almacena en Local Storage------------
+// ------------ Logica del funcionamiento del carrito ------------
 
 fetch(jsonFile)
     .then(response => response.json())
